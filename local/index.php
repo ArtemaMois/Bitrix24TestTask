@@ -1,11 +1,43 @@
 <?php
 
+use Bitrix\Catalog\StoreDocumentTable;
+use Bitrix\Catalog\StoreProductTable;
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 
-$dir = $_SERVER['DOCUMENT_ROOT'] . "/local/";
+function preDump($val)
+{
+    echo "<pre>";
+    print_r($val);
+    echo "</pre>";
+}
 
-$files1 = scandir($dir);
-$files2 = scandir($dir, SCANDIR_SORT_DESCENDING);
 
-print_r($files1);
-print_r($files2);
+
+Bitrix\Main\Loader::includeModule('catalog');
+
+// $arFields = [
+//     'AMOUNT' => 150
+// ];
+
+// $ID = \CCatalogStoreProduct::Update(295, $arFields);
+
+// preDump($ID);
+
+$response = \CCatalogStore::GetList([], [], false, false, );
+while($item = $response->Fetch())
+{
+    preDump($item);
+}
+preDump(1);
+
+// $resp = StoreDocumentTable::getList()->Fetch();
+// $store = new StoreDocumentTable();
+// $store->createObject();
+
+// $products = StoreProductTable::getList();
+// while($item = $products->Fetch())
+// {
+//     preDump($item);
+// }
+// preDump($resp);
