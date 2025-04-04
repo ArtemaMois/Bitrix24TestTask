@@ -14,7 +14,7 @@ function preDump($val)
 
 
 
-Bitrix\Main\Loader::includeModule('catalog');
+// Bitrix\Main\Loader::includeModule('catalog');
 
 // $arFields = [
 //     'AMOUNT' => 150
@@ -24,12 +24,12 @@ Bitrix\Main\Loader::includeModule('catalog');
 
 // preDump($ID);
 
-$response = \CCatalogStore::GetList([], [], false, false, );
-while($item = $response->Fetch())
-{
-    preDump($item);
-}
-preDump(1);
+// $response = \CCatalogStore::GetList([], [], false, false, );
+// while($item = $response->Fetch())
+// {
+//     preDump($item);
+// }
+// preDump(1);
 
 // $resp = StoreDocumentTable::getList()->Fetch();
 // $store = new StoreDocumentTable();

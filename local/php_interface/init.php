@@ -21,10 +21,10 @@ function updateOrderInIntershop(&$arFields)
         $data = getDataForQuery($arFields);
         $http->post($url, $data);
         $json = json_decode($http->getResult())->data;
-        file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/local/" . uniqid() . ".json", $json);
+        // file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/local/" . uniqid() . ".json", $json);
     } catch (Exception $e) {
         $json = $e->getMessage();
-        file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/local/" . uniqid() . ".json", $json);
+        // file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/local/" . uniqid() . ".json", $json);
     }
     // if(count($http->getError()) > 0)
     // {
